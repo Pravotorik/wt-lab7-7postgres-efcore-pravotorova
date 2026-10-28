@@ -1,6 +1,0 @@
-@wt_lab6_6minimalapi_pravotorova_HostAddress = http://localhost:5106
-
-GET {{wt_lab6_6minimalapi_pravotorova_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

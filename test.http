@@ -1,0 +1,41 @@
+### 1. Проверка главной страницы
+GET https://wt-lab6-6minimalapi-pravotorova.onrender.com/
+
+### 2. Проверка информации
+GET https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/info
+
+### 3. Получить все номера
+GET https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/rooms
+
+### 4. Получить номер по ID
+GET https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/rooms/1
+
+### 5. Ошибка 404 (номера не существует)
+GET https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/rooms/999
+
+### 6. Создать новый номер (POST)
+POST https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/rooms
+Content-Type: application/json
+
+{
+  "number": "555",
+  "category": "Тест REST Client",
+  "capacity": 2,
+  "pricePerNight": 1000,
+  "isAvailable": true
+}
+
+### 7. Изменить созданный номер (PUT) - вставь ID из ответа POST (скорее всего 7)
+PUT https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/rooms/7
+Content-Type: application/json
+
+{
+  "number": "555",
+  "category": "Тест REST Client",
+  "capacity": 2,
+  "pricePerNight": 2500,
+  "isAvailable": false
+}
+
+### 8. Удалить номер (DELETE)
+DELETE https://wt-lab6-6minimalapi-pravotorova.onrender.com/api/rooms/7

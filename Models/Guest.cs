@@ -1,4 +1,4 @@
-﻿namespace wt_lab6_6minimalapi_pravotorova.Models;
+﻿namespace wt_lab7_7postgres_efcore_pravotorova.Models;
 
 public class Guest
 {
@@ -6,4 +6,5 @@ public class Guest
     public string FullName { get; set; } = "";
     public string Email { get; set; } = "";
     public string Phone { get; set; } = "";
+    public string Country { get; set; } = ""; // Добавили это поле
 }
