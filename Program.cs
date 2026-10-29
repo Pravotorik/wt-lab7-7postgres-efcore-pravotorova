@@ -15,15 +15,15 @@ if (!string.IsNullOrWhiteSpace(databaseUrl))
     var uri = new Uri(databaseUrl);
     var userInfo = uri.UserInfo.Split(':', 2);
     
-    // Если порт не указан (что бывает на Render), используем стандартный 5432
-    int port = uri.Port > 0 ? uri.Port : 5432;
+    // Переименовали port в dbPort, чтобы не было конфликта с портом сервера
+    int dbPort = uri.Port > 0 ? uri.Port : 5432;
 
     connectionString = $"Host={uri.Host};" +
-                       $"Port={port};" +
+                       $"Port={dbPort};" +
                        $"Database={uri.AbsolutePath.TrimStart('/')};" +
                        $"Username={Uri.UnescapeDataString(userInfo[0])};" +
                        $"Password={Uri.UnescapeDataString(userInfo[1])};" +
-                       $"SSL Mode=Require;Trust Server Certificate=true"; // Исправлено для облака
+                       $"SSL Mode=Require;Trust Server Certificate=true";
 }
 
 // Подключаем DbContext
